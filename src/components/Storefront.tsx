@@ -25,7 +25,8 @@ export function Storefront() {
         <span className="door-sign">Bonjour<span aria-hidden="true">♡</span></span>
         <span className="object-label">Come on in →</span>
       </Link>
-      <div className="entrance-copy"><h1>Software engineer,<br className="mobile-break" /> creative thinker.</h1><div className="flourish" aria-hidden="true">— ❧ —</div>
+      <h1 className="sr-only">Lauren’s Bakery — Lauren Ah-Hot’s portfolio</h1>
+      <div className="entrance-copy">
         <Link href="/bakery" onClick={enter} className="enter-bakery-link">{entering ? 'Opening the door…' : 'Enter bakery'} <span aria-hidden="true">→</span></Link>
       </div>
       <div className="scene-fade" aria-hidden="true" />

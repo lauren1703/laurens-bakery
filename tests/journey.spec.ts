@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('walk from the storefront to the recipe and back with browser history', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Software engineer');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Lauren’s Bakery');
   await page.getByRole('link', { name: 'Enter bakery' }).click();
   await expect(page).toHaveURL(/\/bakery$/);
   await page.getByRole('link', { name: 'Open the recipe notebook for Tree of Thoughts' }).click();

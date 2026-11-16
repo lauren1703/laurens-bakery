@@ -1,9 +1,24 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 export function Header() {
   const path = usePathname();
-  return <header className="site-header">
+  const header = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const element = header.current;
+    if (!element) return;
+    const measure = () => document.documentElement.style.setProperty('--site-header-height', `${element.getBoundingClientRect().height}px`);
+    let frame = 0;
+    const observer = new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(measure);
+    });
+    observer.observe(element);
+    measure();
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+  }, []);
+  return <header className="site-header" ref={header}>
     <Link className="wordmark" href="/" aria-label="Lauren's Bakery, storefront">Lauren's Bakery <span aria-hidden="true">❧</span></Link>
     <nav aria-label="Main navigation">
       <Link href="/" aria-current={path === '/' ? 'page' : undefined}>Storefront</Link>

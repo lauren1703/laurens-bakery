@@ -1,0 +1,301 @@
+/* Keep scene geometry in one coordinate system, sized to the available screen. */
+:root {
+  --page-gutter: clamp(10px, 2vw, 24px);
+}
+.site-shell {
+  width: min(1200px, calc(100% - 2 * var(--page-gutter)));
+  max-width: none;
+  margin: var(--page-gutter) auto;
+}
+.site-header {
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 16px clamp(16px, 2.5vw, 32px);
+}
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px clamp(16px, 2vw, 28px);
+}
+.scene-window {
+  container-type: inline-size;
+}
+.entrance-copy h1, .entrance-copy .flourish {
+  display: none;
+}
+.entrance-copy {
+  bottom: 3.4%;
+}
+.entrance-copy:before {
+  inset: -10px 32% -8px;
+  background: radial-gradient(ellipse, #fcf0dcdd, transparent 75%);
+}
+.enter-bakery-link {
+  font-size: clamp(17px, 2.7cqw, 24px);
+  min-height: 44px;
+}
+.awning-title {
+  font-size: clamp(22px, 4cqw, 38px);
+}
+.experience-object {
+  left: 65%;
+  top: 12%;
+  width: 33%;
+  height: 40%;
+  display: block;
+}
+.experience-object .experience-sign {
+  position: absolute;
+  top: 0;
+  left: 3%;
+  width: 94%;
+  padding: clamp(6px, 1.25cqw, 12px);
+  font-family: var(--hand);
+  font-size: clamp(13px, 2.1cqw, 23px);
+  transform: rotate(-2deg);
+  pointer-events: none;
+}
+.experience-object:hover .experience-sign,
+.experience-object:focus-visible .experience-sign {
+  transform: rotate(0);
+  box-shadow: 2px 4px 0 #92704b40;
+}
+.connect-object {
+  left: 82%;
+  top: 58%;
+  width: 17%;
+  height: 40%;
+}
+.connect-object .object-label {
+  bottom: 47%;
+  font-size: clamp(11px, 1.7cqw, 16px);
+}
+.connect-mobile {
+  display: none;
+}
+.pastry-card {
+  font-size: clamp(10px, 1.6cqw, 16px);
+  padding: 3px clamp(5px, 1cqw, 12px);
+}
+.pastry-card small, .pastry-card > span {
+  font-size: clamp(9px, 1.2cqw, 11px);
+}
+.featured-pastry .pastry-card {
+  white-space: normal;
+  text-align: center;
+  width: max-content;
+  max-width: 100%;
+}
+.decorative-pastry .pastry-card {
+  font-size: clamp(9px, 1.4cqw, 14px);
+}
+.hanging-note {
+  font-size: clamp(12px, 1.9cqw, 20px);
+  padding: clamp(6px, 1.3cqw, 12px);
+}
+.counter-inscription {
+  font-size: clamp(12px, 1.8cqw, 19px);
+}
+.connect-dialog {
+  max-height: calc(100svh - 48px);
+  overflow-y: auto;
+}
+.connect-dialog .social-links {
+  font: 17px var(--hand);
+  margin-top: 20px;
+}
+@media (min-width: 601px) and (min-height: 450px) {
+  .site-shell:has(> .storefront-page),
+  .site-shell:has(> .bakery-page) {
+    width: min(1200px, calc(100vw - 2 * var(--page-gutter)), calc((100svh - var(--site-header-height, 90px) - 2 * var(--page-gutter) - 2px) * 1.5));
+  }
+  .storefront-scene, .interior-scene {
+    aspect-ratio: 3 / 2;
+  }
+  .interior-canvas {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Photos are part of the same About page and flow beneath each magnet story. */
+.about-kitchen {
+  align-items: start;
+  min-height: 830px;
+  padding-top: 70px;
+  padding-bottom: 65px;
+}
+.about-letter {
+  align-self: center;
+}
+.about-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+.about-intro h1 {
+  font-size: clamp(30px, 3.5vw, 43px);
+  margin: 8px 0 0;
+}
+.headshot {
+  flex: 0 0 96px;
+  margin: 0;
+  padding: 5px 5px 10px;
+  background: #fff9ee;
+  border: 1px solid #bca07e;
+  box-shadow: 2px 3px 0 #9a7b4f22;
+  transform: rotate(4deg);
+}
+.headshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.fridge-interests {
+  min-width: 0;
+}
+.fridge-story {
+  min-height: 0;
+  transform: rotate(1deg);
+  padding: 22px 18px 18px;
+}
+.fridge-story h2 {
+  font: 20px/1.3 var(--hand);
+  margin: 2px 0 12px;
+}
+.fridge-story > p {
+  font: 17px/1.5 var(--serif);
+  margin-bottom: 0;
+}
+.hobby-photo {
+  margin: 18px 0 0;
+  padding: 6px 6px 12px;
+  background: #fff9ec;
+  border: 1px solid #c7b08a;
+  box-shadow: 1px 2px 0 #b6976f33;
+  transform: rotate(-1deg);
+}
+.hobby-photo a {
+  display: block;
+}
+.hobby-photo img {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 17vw, 210px);
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .about-kitchen {
+    min-height: 0;
+    padding: 35px 24px;
+  }
+  .about-letter {
+    align-self: stretch;
+  }
+  .fridge-interests {
+    max-width: 480px;
+  }
+  .hobby-photo img {
+    height: 230px;
+  }
+}
+@media (max-width: 600px) {
+  .site-header {
+    align-items: flex-start;
+    padding: 13px 15px;
+    gap: 9px;
+  }
+  .wordmark {
+    font-size: clamp(23px, 6.5vw, 28px);
+  }
+  .site-header nav {
+    gap: 5px 19px;
+  }
+  .site-header nav a {
+    font-size: 13px;
+  }
+  .storefront-scene {
+    aspect-ratio: 4 / 5;
+  }
+  .entrance-copy {
+    bottom: 3%;
+    padding: 8px 12px;
+    background: transparent;
+  }
+  .entrance-copy:before {
+    display: block;
+    inset: -8px 22% -5px;
+  }
+  .awning-title {
+    font-size: clamp(23px, 6.5vw, 30px);
+  }
+  .experience-object, .connect-object {
+    visibility: hidden;
+  }
+  .connect-mobile {
+    display: block;
+    position: absolute;
+    bottom: 3%;
+    right: 4%;
+    background: #fff3de;
+    border: 1px solid #a58763;
+    border-radius: 3px;
+    box-shadow: 1px 2px #94744f33;
+    padding: 8px 13px;
+    min-height: 44px;
+    font: 13px var(--hand);
+  }
+  .featured-pastry .pastry-card {
+    font-size: 12px;
+  }
+  .featured-pastry .pastry-card small {
+    display: none;
+  }
+  .featured-pastry .pastry-card > span {
+    font-size: 10px;
+  }
+  .about-kitchen {
+    padding: 32px 20px;
+    gap: 30px;
+  }
+  .about-letter {
+    padding: 26px 22px;
+  }
+  .about-intro {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .about-intro h1 {
+    font-size: 34px;
+  }
+  .headshot {
+    flex-basis: 84px;
+  }
+  .fridge-story > p {
+    font-size: 18px;
+  }
+  .hobby-photo img {
+    height: 230px;
+  }
+}
+@media (max-width: 380px) {
+  .about-kitchen {
+    padding: 30px 16px;
+  }
+  .about-intro h1 {
+    font-size: 30px;
+  }
+  .headshot {
+    flex-basis: 74px;
+  }
+  .fridge-interests {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .hobby-photo img {
+    height: 200px;
+  }
+}

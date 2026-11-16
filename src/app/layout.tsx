@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Header } from '@/components/Header';
 import './globals.css';
+import './responsive.css';
 
 export const metadata: Metadata = {
   title: { default: "Lauren's Bakery | Software engineer & creative thinker", template: "%s | Lauren's Bakery" },

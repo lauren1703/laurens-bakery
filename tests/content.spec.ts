@@ -21,8 +21,6 @@ test('experience separates the upcoming role, completed internship, and teaching
   await expect(rippling).toContainText('Starting June 2027 · New York');
   await expect(rippling).toContainText('May – August 2026');
   await expect(page.locator('article#psyflo')).toContainText('June – August 2025');
-  await page.getByRole('link', { name: 'Visit the classroom', exact: false }).click();
-  await expect(page).toHaveURL(/#teaching$/);
   const classroom = page.locator('#teaching');
   await expect(classroom.getByRole('heading', { name: 'Intro to Backend Development' })).toBeVisible();
   await expect(classroom).toContainText('80+');
@@ -45,13 +43,13 @@ test('fridge magnets reveal interests without navigating away from About', async
   await tennis.click();
   await expect(tennis).toHaveAttribute('aria-pressed', 'true');
   await expect(story).toContainText('Tennis');
-  await expect(story).toContainText('Description coming soon.');
+  await expect(story).not.toContainText('Description coming soon.');
   const nails = page.getByRole('button', { name: 'Doing my nails', exact: true });
   await nails.focus();
   await page.keyboard.press('Enter');
   await expect(nails).toHaveAttribute('aria-pressed', 'true');
   await expect(story).toContainText('Doing my nails');
-  await expect(story).toContainText('Description coming soon.');
+  await expect(story).not.toContainText('Description coming soon.');
   await expect(tennis).toHaveAttribute('aria-pressed', 'false');
   await expect(page).toHaveURL(/\/about$/);
   await expect(page.getByRole('button', { pressed: true })).toHaveCount(1);

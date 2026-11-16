@@ -29,7 +29,7 @@ export const experiences: Experience[] = [
     title: 'Backend Developer & Intro to Backend Lead Instructor',
     dates: 'February 2025 – Present',
     status: 'Building & teaching',
-    summary: 'Developing student-facing products and helping the next generation of backend developers find their footing.',
+    summary: 'Developing apps for the Cornell community, while sharing my knowledge in backend development.',
     contributions: [
       'Own Resell’s roadmap, product requirements, and feature scoping across an 11-person engineering and design team; shipped 5+ features in Spring 2026.',
       'Architected an AI-powered recommendation feed and event-discovery experience for approximately 10,000 monthly active users.',
