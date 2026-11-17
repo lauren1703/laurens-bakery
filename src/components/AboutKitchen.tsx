@@ -11,8 +11,7 @@ export function AboutKitchen() {
   return <main id="main" className="about-page">
     <div className="about-toolbar"><Link href="/bakery">← Back to the counter</Link><span>A peek into the back kitchen</span></div>
     <div className="about-kitchen">
-      <Image src="/art/kitchen.jpg" alt="The bakery’s warm watercolor back kitchen, with a pale sage refrigerator and a wooden worktop." fill sizes="(max-width:760px) 100vw, 1200px" quality={90} preload className="kitchen-art"/>
-      <section className="about-letter" aria-labelledby="about-title"><span className="letter-tape" aria-hidden="true"/>
+      <section className="about-letter" aria-labelledby="about-title">
         <div className="about-intro"><div><p className="eyebrow">Meet the baker</p><h1 id="about-title">{about.title}</h1></div><figure className="headshot"><Image src="/photos/headshot.webp" width={480} height={550} alt="Lauren Ah-Hot smiling." sizes="110px" quality={85}/></figure></div>
         <p>{about.introduction}</p><p>{about.cafeStory}</p><SocialLinks/>
       </section>

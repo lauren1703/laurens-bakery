@@ -18,11 +18,11 @@ export function Storefront() {
   }
   return <main id="main" className="storefront-page">
     <div className={`scene-window storefront-scene ${entering ? 'is-entering' : ''}`}>
-      <SceneImage scene="storefront" priority alt="A watercolor French bakery with a peach striped awning, weathered teal doors, pastry windows, ivy and a little café table." />
+      <SceneImage scene="storefront" priority alt="A simply illustrated French bakery with a peach striped awning, sage doors, two pastry windows and one olive tree." />
       <div className="awning-title" aria-hidden="true">Lauren's Bakery</div>
       <Link href="/bakery" onClick={enter} className="door-hotspot" aria-label="Open the bakery door and step inside">
-        <span className="door-threshold" /><span className="door-leaf left" /><span className="door-leaf right" />
-        <span className="door-sign">Bonjour<span aria-hidden="true">♡</span></span>
+        
+        
         <span className="object-label">Come on in →</span>
       </Link>
       <h1 className="sr-only">Lauren’s Bakery — Lauren Ah-Hot’s portfolio</h1>

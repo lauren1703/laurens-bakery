@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: 'Behind the counter', description: 'L
 export default function ExperiencePage() {
   return <main id="main" className="experience-page">
     <Link className="back-link" href="/bakery">← Back inside the bakery</Link>
-    <header className="experience-heading"><h1>Behind the counter</h1><p>My experiences</p><span className="heading-flourish" aria-hidden="true">— ❧ —</span></header>
+    <header className="experience-heading"><h1>Behind the counter</h1><p>My experiences</p></header>
     <div className="experience-layout"><aside className="experience-gallery" aria-label="Jump to an experience">
       {experiences.map(e=><Link key={e.id} href={`#${e.id}`} className={`experience-frame frame-${e.motif}`}><div className="frame-picture" aria-hidden="true"/><span className="frame-plaque">{e.organization}</span></Link>)}
     </aside><div className="experience-stories">

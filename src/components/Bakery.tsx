@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { useRef } from 'react';
 import { SceneImage } from './SceneImage';
-import { Pastry } from './Pastry';
 import { SocialLinks } from './SocialLinks';
 export function Bakery() {
   const connect = useRef<HTMLDialogElement>(null);
@@ -10,15 +9,12 @@ export function Bakery() {
   return <main id="main" className="bakery-page">
     <h1 className="sr-only">Welcome inside Lauren&apos;s Bakery</h1>
     <div className="scene-window interior-scene" id="counter"><div className="interior-canvas">
-      <SceneImage scene="interior" priority alt="Inside the watercolor bakery: a friendly baker, sage pendant lights, shelves of jars, a teal glass counter and gold-framed pictures." />
+      <SceneImage scene="interior" priority alt="A quiet illustrated bakery with Lauren behind a sage counter, three pastries, two framed pictures and a café table." />
       <Link href="/about" className="room-object baker-object" aria-label="Meet Lauren, the baker"><span className="hanging-note">Meet the baker <span aria-hidden="true">↗</span></span></Link>
       <Link className="room-object experience-object" href="/experience" aria-label="Look at the experience wall"><span className="experience-sign">Experience <span aria-hidden="true">↗</span></span></Link>
-      <Link href="/projects/tree-of-thoughts" className="pastry-object featured-pastry research-pastry" aria-label="Open the recipe notebook for Tree of Thoughts"><Pastry kind="roll" /><span className="pastry-card"><small>A little deep learning</small><strong>Tree of Thoughts</strong><span>Read the recipe →</span></span></Link>
-      <div className="pastry-object second-pastry decorative-pastry"><Pastry /><span className="pastry-card"><strong>Croissant</strong></span></div>
-      <div className="pastry-object third-pastry decorative-pastry"><Pastry kind="tart" /><span className="pastry-card"><strong>Apple tart</strong></span></div>
-      <div className="pastry-object fourth-pastry decorative-pastry"><Pastry /><span className="pastry-card"><strong>Croissant</strong></span></div>
+      <Link href="/projects/tree-of-thoughts" className="pastry-object featured-pastry research-pastry" aria-label="Open the recipe notebook for Tree of Thoughts"><span className="pastry-card"><strong>Tree of Thoughts <span aria-hidden="true">→</span></strong></span></Link>
       <button className="room-object connect-object" onClick={openConnect} aria-label="Let’s connect"><span className="object-label">Let’s connect <span aria-hidden="true">↗</span></span></button>
-      <div className="counter-inscription" aria-hidden="true">Made with curiosity & a little care.</div>
+
     </div>
       <button className="connect-mobile" onClick={openConnect}>Let’s connect <span aria-hidden="true">↗</span></button>
     </div>
